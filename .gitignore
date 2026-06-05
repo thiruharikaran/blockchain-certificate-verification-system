@@ -1,0 +1,28 @@
+# Environment files
+.env
+**/.env
+
+# Dependencies
+node_modules
+**/node_modules
+
+# React / Vite build files
+dist
+build
+
+# Hardhat / Blockchain
+artifacts
+cache
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode
+
+# Uploads (optional)
+uploads

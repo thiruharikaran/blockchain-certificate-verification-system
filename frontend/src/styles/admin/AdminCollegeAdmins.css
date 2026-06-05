@@ -1,0 +1,236 @@
+/* =======================================================
+   ADMIN COLLEGE ADMINS PAGE
+======================================================= */
+
+.admin-college-admins-container {
+  padding: 20px;
+  color: white;
+}
+
+/* =======================================================
+   TABLE
+======================================================= */
+
+.table {
+  text-align: center;
+}
+
+.cell-flex {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* =======================================================
+   SEARCH
+======================================================= */
+
+.table-tools {
+  margin-bottom: 15px;
+}
+
+.table-tools input {
+  width: 250px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background: #020617;
+  color: white;
+  outline: none;
+}
+
+.table-tools input:focus {
+  border-color: #6366f1;
+}
+
+/* =======================================================
+   ACTION BUTTONS
+======================================================= */
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* =======================================================
+   PAGINATION
+======================================================= */
+
+.pagination {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.pagination button {
+  background: #1e293b;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pagination button:hover {
+  background: #334155;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* =======================================================
+   MODAL
+======================================================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 400px;
+  background: #0f172a;
+  padding: 25px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* =======================================================
+   MODAL INPUTS
+======================================================= */
+
+.modal-content input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background: #020617;
+  color: white;
+  outline: none;
+}
+
+.modal-content input:focus {
+  border-color: #6366f1;
+}
+
+/* =======================================================
+   MODAL BUTTONS
+======================================================= */
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal-buttons button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.modal-buttons .cancel {
+  background: #475569;
+  color: white;
+}
+
+.modal-buttons button:not(.cancel) {
+  background: #6366f1;
+  color: white;
+}
+
+.modal-buttons button:not(.cancel):hover {
+  background: #4f46e5;
+}
+
+.college-admin-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+}
+
+.college-admin-modal-content {
+  width: 450px;
+  max-width: 90vw;
+
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  padding: 25px;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.college-admin-modal-content input {
+  width: 100%;
+  padding: 12px;
+
+  border-radius: 8px;
+  border: 1px solid #334155;
+
+  background: #020617;
+  color: white;
+
+  outline: none;
+  font-size: 14px;
+
+  box-sizing: border-box;
+}
+
+.college-admin-modal-content input:focus {
+  border-color: #6366f1;
+}
+
+.college-admin-modal-content h3 {
+  margin: 0 0 10px;
+  color: white;
+  font-size: 24px;
+}
+
+.college-admin-modal-content {
+  width: 500px;
+  max-width: 90vw;
+
+  background: #0f172a;
+
+  padding: 30px;
+
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}

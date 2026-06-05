@@ -1,0 +1,53 @@
+/* =======================================================
+   LOADER SCREEN
+======================================================= */
+
+.loader-screen {
+  width: 100%;
+  height: 100vh;
+
+  background: #020617;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+}
+
+/* =======================================================
+   LOADER RING
+======================================================= */
+
+.loader-ring {
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  border: 5px solid rgba(255, 255, 255, 0.08);
+  border-top: 5px solid #22d3ee;
+
+  animation: spin 1s linear infinite;
+}
+
+.loader-screen h2 {
+  margin-top: 28px;
+  font-size: 2rem;
+}
+
+.loader-screen p {
+  margin-top: 10px;
+  opacity: 0.65;
+}
+
+/* =======================================================
+   ANIMATIONS
+======================================================= */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

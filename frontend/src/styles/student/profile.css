@@ -1,0 +1,21 @@
+/* =======================================================
+   PROFILE PAGE
+======================================================= */
+
+.profile-page {
+  padding: 40px;
+  background: #f8fafc;
+  height: 100vh;
+}
+
+/* =======================================================
+   PROFILE CARD
+======================================================= */
+
+.profile-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}

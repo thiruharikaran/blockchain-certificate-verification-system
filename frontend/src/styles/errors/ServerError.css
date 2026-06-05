@@ -1,0 +1,178 @@
+/* ===== GLOBAL ===== */
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.scene500 {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 9999;
+  font-family: "Orbitron", sans-serif;
+  color: white;
+}
+
+/* ===== BACKGROUND ===== */
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  inset: 0;
+  z-index: 1;
+  animation: floatBg 20s ease-in-out infinite;
+}
+@keyframes floatBg {
+  0% {
+    transform: scale(1) translateY(0px);
+  }
+  50% {
+    transform: scale(1.05) translateY(-20px);
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+  }
+}
+
+/* ===== GROUND ===== */
+.ground {
+  position: absolute;
+  bottom: -130px;
+  left: 0px;
+  width: 1920px;
+  animation: floatAstronaut 6s ease-in-out infinite;
+  z-index: 3;
+  pointer-events: none;
+}
+@keyframes floatAstronaut {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ===== SOFT OVERLAY ===== */
+.scene500::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle at 20% 50%,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 60%
+  );
+}
+
+/* ===== CONTENT ===== */
+.error-content {
+  position: absolute;
+  left: 8%;
+  top: 30%;
+  transform: translateY(-50%);
+  z-index: 5;
+  animation: fadeIn 1.2s ease;
+  max-width: 500px;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+/* TITLE */
+.title {
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+/* DESCRIPTION */
+.desc {
+  margin-top: 6px;
+  font-size: 16px;
+  color: #e0e7ff;
+  line-height: 1.6;
+}
+/* ===== ERROR TEXT ===== */
+.error-code {
+  font-size: 180px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  margin: 0;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== BUTTONS ===== */
+.buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.icon {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+  color: white;
+}
+.btn.primary .icon {
+  color: white;
+}
+.btn.outline .icon {
+  color: #c7d2fe;
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.6);
+}
+
+.btn.outline {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn.outline:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}

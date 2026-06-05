@@ -1,0 +1,21 @@
+const jwt = require("jsonwebtoken");
+
+module.exports = function verifyToken(req, res, next) {
+  const authHeader = req.headers.authorization;
+
+  // ✅ Must exist AND start with "Bearer "
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return res.status(401).json({ message: "No token provided" });
+  }
+
+  // ✅ Extract token safely
+  const token = authHeader.split(" ")[1];
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded; // { id, role }
+    next();
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid token" });
+  }
+};

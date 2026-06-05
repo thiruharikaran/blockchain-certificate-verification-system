@@ -1,0 +1,334 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.space404-container {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("/textures/nebula-not-found.png");
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden;
+
+  position: relative;
+
+  color: white;
+  font-family: system-ui;
+}
+
+/* dark overlay */
+
+.space404-container::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  z-index: 0;
+}
+
+/* CONTENT */
+
+.space404-content {
+  position: relative;
+
+  text-align: center;
+}
+
+/* 404 TEXT */
+
+.space404-code {
+  font-size: 200px;
+  font-weight: 900;
+
+  letter-spacing: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.2),
+    0 4px 0 rgba(0, 0, 0, 0.15),
+    0 10px 25px rgba(0, 0, 0, 0.6),
+    0 0 18px rgba(255, 255, 255, 0.2);
+}
+
+/* TITLE */
+
+.space404-title {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+/* TEXT */
+
+.space404-text {
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+/* BUTTON */
+
+.space404-button {
+  margin-top: 25px;
+
+  padding: 12px 30px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(45deg, #5a4cff, #00b4ff);
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.space404-button:hover {
+  transform: scale(1.05);
+}
+
+/* 0 slightly bigger */
+
+.zero {
+  transform: scale(1.1);
+}
+
+/* PLANET */
+
+.planet {
+  position: absolute;
+
+  left: 27%;
+  top: 258px;
+
+  width: 400px;
+
+  opacity: 0.75;
+
+  filter: blur(1px);
+
+  z-index: 1;
+
+  animation: planetFloat 12s ease-in-out infinite;
+}
+
+@keyframes planetFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.four-left {
+  z-index: 5;
+}
+
+.zero {
+  z-index: 5;
+}
+
+.four-right {
+  z-index: 6;
+}
+
+/* UFO */
+
+.ufo {
+  position: absolute;
+
+  top: 190px;
+  left: 55%;
+
+  transform: translateX(-50%);
+
+  width: 650px;
+
+  z-index: 6;
+
+  animation: ufoFloat 6s ease-in-out infinite;
+}
+
+@keyframes ufoFloat {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-20px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* UFO LIGHT */
+
+.ufo-light {
+  position: absolute;
+
+  top: 390px;
+  left: 57%;
+
+  transform: translateX(-50%);
+
+  width: 90px;
+  height: 180px;
+  animation: rockFloat4 5s ease-in-out infinite;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 255, 255, 0.35),
+    rgba(0, 255, 255, 0.15),
+    transparent
+  );
+
+  filter: blur(18px);
+
+  z-index: 12;
+}
+
+/* SINGLE ROCK */
+
+.rock-single {
+  position: absolute;
+
+  top: 440px;
+  left: 44%;
+
+  width: 110px;
+
+  z-index: 6;
+
+  animation: rockFloat 5s ease-in-out infinite;
+}
+
+@keyframes rockFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* DOUBLE ROCK */
+
+.rock-double {
+  position: absolute;
+
+  left: 59%;
+  top: 680px;
+
+  width: 170px;
+
+  z-index: 3;
+
+  animation: rockFloat2 8s ease-in-out infinite;
+}
+
+@keyframes rockFloat2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* reduce rock brightness */
+
+.rock-single,
+.rock-double {
+  opacity: 0.85;
+  filter: brightness(0.85);
+}
+
+/* Requested URL */
+
+.space404-url {
+  margin-top: 12px;
+
+  font-size: 14px;
+
+  opacity: 0.8;
+}
+
+.space404-url span {
+  color: #00d9ff;
+
+  font-family: monospace;
+}
+
+/* Action buttons container */
+
+.space404-actions {
+  margin-top: 25px;
+
+  display: flex;
+
+  gap: 15px;
+
+  justify-content: center;
+}
+
+/* Secondary button */
+
+.space404-button-secondary {
+  margin-top: 25px;
+
+  padding: 12px 30px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(45deg, #5a4cff, #00b4ff);
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.space404-button-secondary:hover {
+  transform: scale(1.05);
+}
