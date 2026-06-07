@@ -215,7 +215,7 @@ await Verification.create({
 
     uploadedAt: cert.uploadedAt,
 
-    fileUrl: `http://localhost:5000/uploads/${cert.fileName}`
+    fileUrl: `${process.env.BASE_URL}/uploads/${cert.fileName}`
   }
 });
 

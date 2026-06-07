@@ -6,11 +6,9 @@ function CertificateDetails({ cert }) {
   }
 
   // Build certificate file URL
-  const fileUrl = cert.fileName
-    ? `${
-        import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"
-      }/uploads/${cert.fileName}`
-    : null;
+  const API_BASE = import.meta.env.VITE_API_URL.replace("/api", "");
+
+  const fileUrl = cert.fileName ? `${API_BASE}/uploads/${cert.fileName}` : null;
 
   // Format upload date
   const uploadedDate = cert.uploadedAt
