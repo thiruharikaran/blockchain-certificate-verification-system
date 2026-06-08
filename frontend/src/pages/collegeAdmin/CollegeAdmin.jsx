@@ -122,7 +122,11 @@ function CollegeAdmin() {
     try {
       setUploading(true);
 
-      const response = await api.post("/certificate/issue", formData);
+      const response = await api.post("/certificate/issue", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       const hash = response.data.certificateHash;
 
