@@ -31,6 +31,10 @@ const certificateSchema = new mongoose.Schema({
   fileName: {
   type: String,
   required: true
+},
+
+certificateUrl: {
+  type: String
 }
 
 });

@@ -2,7 +2,8 @@ const express = require("express");
 const multer = require("multer");
 const Certificate = require("../models/Certificate");
 const hashFile = require("../utils/hashFile");
-
+const cloudinary = require("../config/cloudinary");
+const fs = require("fs");
 const verifyToken = require("../middleware/authMiddleware"); 
 const { ethers } = require("ethers");
 const ABI = require("../blockchain/CertificateVerification.json").abi;
@@ -51,6 +52,16 @@ router.post("/issue", verifyToken, upload.single("file"), async (req, res) => {
 
     try {
       certificateHash = await hashFile(filePath);
+      const existing = await Certificate.findOne({
+  certificateHash
+});
+
+if (existing) {
+  return res.status(400).json({
+    success: false,
+    message: "Certificate already exists (duplicate file)",
+  });
+}
       console.log("✅ HASH:", certificateHash);
     } catch (err) {
       console.error("❌ HASH ERROR:", err);
@@ -60,6 +71,20 @@ router.post("/issue", verifyToken, upload.single("file"), async (req, res) => {
       });
     }
 
+const cloudinaryResult = await cloudinary.uploader.upload(
+  filePath,
+  {
+    resource_type: "raw",
+    folder: "veriqore-certificates"
+  }
+);
+
+fs.unlinkSync(filePath);
+
+console.log(
+  "Cloudinary URL:",
+  cloudinaryResult.secure_url
+);
 ////////////////////////////////////////////////////////
 // STORE HASH ON BLOCKCHAIN (SEPOLIA)
 ////////////////////////////////////////////////////////
@@ -95,18 +120,7 @@ catch (err) {
   console.error("❌ Blockchain store error:", err);
 
 }
-    ////////////////////////////////////////////////////////
-    // 🚨 DUPLICATE CHECK (IMPORTANT FIX)
-    ////////////////////////////////////////////////////////
 
-    const existing = await Certificate.findOne({ certificateHash });
-
-    if (existing) {
-      return res.status(400).json({
-        success: false,
-        message: "Certificate already exists (duplicate file)",
-      });
-    }
 
     ////////////////////////////////////////////////////////
     // Save to MongoDB
@@ -116,12 +130,13 @@ catch (err) {
 
     try {
       certificate = await Certificate.create({
-        studentId,
-        certificateName,
-        certificateHash,
-        fileName: req.file.filename,
-        uploadedBy: req.user.id,
-      });
+  studentId,
+  certificateName,
+  certificateHash,
+  fileName: req.file.filename,
+  certificateUrl: cloudinaryResult.secure_url,
+  uploadedBy: req.user.id
+});
 
       console.log("✅ DB SAVED");
     } catch (err) {
