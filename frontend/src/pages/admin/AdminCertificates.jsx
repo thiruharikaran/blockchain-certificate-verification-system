@@ -82,12 +82,10 @@ export default function AdminCertificates() {
   };
 
   // Open certificate file
-  const handleView = (fileName) => {
-    const fileUrl = `${
-      import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"
-    }/uploads/${fileName}`;
+  const handleView = (certificateUrl) => {
+    if (!certificateUrl) return;
 
-    window.open(fileUrl, "_blank");
+    window.open(certificateUrl, "_blank");
   };
 
   if (loading) {
@@ -172,7 +170,7 @@ export default function AdminCertificates() {
                 <td className="actions">
                   <button
                     className="view-btn"
-                    onClick={() => handleView(certificate.fileName)}
+                    onClick={() => handleView(certificate.certificateUrl)}
                   >
                     <FaEye /> View
                   </button>

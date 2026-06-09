@@ -60,14 +60,10 @@ export default function AdminVerifications() {
   const totalPages = Math.max(1, Math.ceil(filtered.length / perPage));
 
   // Open certificate file
-  const handleView = (fileName) => {
-    if (!fileName) return;
+  const handleView = (certificateUrl) => {
+    if (!certificateUrl) return;
 
-    const fileUrl = `${
-      import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"
-    }/uploads/${fileName}`;
-
-    window.open(fileUrl, "_blank");
+    window.open(certificateUrl, "_blank");
   };
 
   if (loading) {
@@ -174,7 +170,7 @@ export default function AdminVerifications() {
                       <button
                         className="view-btn"
                         onClick={() =>
-                          handleView(verification.certificateId?.fileName)
+                          handleView(verification.certificateId?.certificateUrl)
                         }
                       >
                         View

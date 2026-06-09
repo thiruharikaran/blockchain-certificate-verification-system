@@ -23,7 +23,7 @@ router.get(
         // populate certificate info
         .populate({
           path: "certificateId",
-          select: "certificateName certificateHash fileName uploadedAt",
+          select: "certificateName certificateHash fileName certificateUrl uploadedAt",
           populate: {
             path: "studentId",
             select: "name email"

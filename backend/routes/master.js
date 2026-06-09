@@ -748,9 +748,9 @@ router.get(
         .populate("recruiterId", "name email companyName")
 
         .populate(
-          "certificateId",
-          "certificateName certificateHash fileName uploadedAt"
-        )
+  "certificateId",
+  "certificateName certificateHash fileName certificateUrl uploadedAt"
+)
 
         .sort({ createdAt: -1 });
 

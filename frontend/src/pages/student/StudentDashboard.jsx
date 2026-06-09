@@ -75,11 +75,7 @@ function StudentDashboard() {
   };
 
   // Build PDF preview URL
-  const pdfUrl = selectedCert
-    ? `${
-        import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"
-      }/uploads/${selectedCert.fileName}`
-    : "";
+  const pdfUrl = selectedCert?.certificateUrl || "";
 
   if (loading) {
     return <div className="page-loader">Loading certificates...</div>;

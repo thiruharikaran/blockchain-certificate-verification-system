@@ -176,12 +176,10 @@ function CollegeAdmin() {
   };
 
   // Open certificate file
-  const openCertificate = (fileName) => {
-    const fileUrl = `${
-      import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"
-    }/uploads/${fileName}`;
+  const openCertificate = (certificateUrl) => {
+    if (!certificateUrl) return;
 
-    window.open(fileUrl, "_blank");
+    window.open(certificateUrl, "_blank");
   };
 
   return (
@@ -346,7 +344,9 @@ function CollegeAdmin() {
                   <td>
                     <button
                       className="view-btn"
-                      onClick={() => openCertificate(certificate.fileName)}
+                      onClick={() =>
+                        openCertificate(certificate.certificateUrl)
+                      }
                     >
                       <FaFileAlt />
                       View
