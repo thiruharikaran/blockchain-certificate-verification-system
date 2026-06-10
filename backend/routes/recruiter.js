@@ -215,7 +215,7 @@ await Verification.create({
 
     uploadedAt: cert.uploadedAt,
 
-    fileUrl: `${process.env.BASE_URL}/uploads/${cert.fileName}`
+    fileUrl: cert.certificateUrl
   }
 });
 
