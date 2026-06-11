@@ -27,19 +27,29 @@ function Landing() {
           </h1>
 
           <p>
-            Secure academic certificate verification using blockchain technology
-            to prevent fraud and ensure authenticity.
+            Secure academic certificate verification using SHA-256 hashing,
+            Ethereum smart contracts, and cloud storage to prevent fraud and
+            ensure authenticity.
           </p>
           <p className="hero-tech">
-            Ethereum Sepolia • Smart Contracts • MongoDB Atlas
+            Ethereum Sepolia • Smart Contracts • Cloudinary • MongoDB Atlas
           </p>
 
           <div className="hero-buttons">
             <Link to="/login">
               <button className="btn-primary">Live Demo</button>
             </Link>
+
             <a href="#how">
               <button className="btn-secondary">How It Works</button>
+            </a>
+
+            <a
+              href="https://github.com/thiruharikaran/blockchain-certificate-verification-system"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <button className="btn-secondary">GitHub</button>
             </a>
           </div>
         </div>
@@ -74,20 +84,26 @@ function Landing() {
 
           <div className="highlight-card">
             <span>⛓</span>
-            <h3>Ethereum Sepolia</h3>
-            <p>Blockchain-based verification storage.</p>
+            <h3>Ethereum Smart Contracts</h3>
+            <p>Blockchain-based certificate verification.</p>
           </div>
 
           <div className="highlight-card">
-            <span>⚡</span>
-            <h3>Instant Verification</h3>
-            <p>Verify certificates within seconds.</p>
+            <span>☁️</span>
+            <h3>Cloudinary Storage</h3>
+            <p>
+              Secure PDF certificate storage and delivery using Cloudinary cloud
+              infrastructure.
+            </p>
           </div>
 
           <div className="highlight-card">
             <span>🛡</span>
-            <h3>JWT Authentication</h3>
-            <p>Secure role-based access system.</p>
+            <h3>Role-Based Authentication</h3>
+            <p>
+              JWT-powered access control for College Admins, Students, and
+              Recruiters.
+            </p>
           </div>
         </div>
       </motion.section>
@@ -159,6 +175,33 @@ function Landing() {
               data.
             </p>
           </div>
+
+          <div className="feature-card">
+            <span>☁️</span>
+            <h3>Cloud Certificate Storage</h3>
+            <p>
+              Certificates are securely stored and delivered using Cloudinary
+              cloud infrastructure.
+            </p>
+          </div>
+
+          <div className="feature-card">
+            <span>🔗</span>
+            <h3>Smart Contract Verification</h3>
+            <p>
+              Certificate authenticity is validated through Ethereum smart
+              contracts deployed on the Sepolia network.
+            </p>
+          </div>
+
+          <div className="feature-card">
+            <span>📜</span>
+            <h3>Verification History</h3>
+            <p>
+              Students can track recruiter verification activities and
+              certificate validation records.
+            </p>
+          </div>
         </div>
       </motion.section>
 
@@ -179,7 +222,7 @@ function Landing() {
         <div className="steps">
           <div className="step">
             <div className="step-number">1</div>
-            <h3>Upload Certificate</h3>
+            <h3>Upload & Store Certificate</h3>
             <p>
               College administrators upload a student certificate to the system.
             </p>
@@ -198,8 +241,8 @@ function Landing() {
             <div className="step-number">3</div>
             <h3>Verify Certificate</h3>
             <p>
-              Recruiters upload the certificate and the system verifies the
-              blockchain record.
+              Recruiters upload a certificate and the system validates the
+              SHA-256 hash against the blockchain record.
             </p>
           </div>
         </div>
@@ -223,7 +266,7 @@ function Landing() {
 
             <h3>College Admin</h3>
 
-            <p>Email: demo_college@certverify.com</p>
+            <p>Email: demo_college@veriqore.com</p>
 
             <p>Password: demo123</p>
 
@@ -235,7 +278,7 @@ function Landing() {
 
             <h3>Student</h3>
 
-            <p>Email: demo_student@certverify.com</p>
+            <p>Email: demo_student@veriqore.com</p>
 
             <p>Password: demo123</p>
 
@@ -247,7 +290,7 @@ function Landing() {
 
             <h3>Recruiter</h3>
 
-            <p>Email: demo_recruiter@certverify.com</p>
+            <p>Email: demo_recruiter@veriqore.com</p>
 
             <p>Password: demo123</p>
 
@@ -300,10 +343,14 @@ function Landing() {
           <div>Node.js</div>
           <div>Express.js</div>
           <div>MongoDB Atlas</div>
+          <div>Cloudinary</div>
           <div>Ethereum Sepolia</div>
           <div>Solidity</div>
           <div>JWT Authentication</div>
+          <div>SHA-256 Hashing</div>
           <div>Web3.js</div>
+          <div>Vercel</div>
+          <div>Render</div>
         </div>
       </motion.section>
 
@@ -346,6 +393,13 @@ function Landing() {
 
           <div>
             <h4>Navigation</h4>
+            <a
+              href="https://github.com/thiruharikaran/blockchain-certificate-verification-system"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
 
             <a href="#">Home</a>
 
