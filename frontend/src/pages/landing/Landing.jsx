@@ -18,7 +18,7 @@ import {
   FaGlobe,
   FaLink,
   FaFileAlt,
-  FaSearch,
+  FaUserTie,
 } from "react-icons/fa";
 
 import { SiEthereum } from "react-icons/si";
@@ -323,7 +323,7 @@ function Landing() {
 
           <div className="demo-card">
             <span>
-              <FaSearch className="feature-icon" />
+              <FaUserTie className="feature-icon" />
             </span>
 
             <h3>Recruiter</h3>
