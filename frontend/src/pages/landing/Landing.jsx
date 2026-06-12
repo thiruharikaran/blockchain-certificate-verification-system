@@ -8,6 +8,20 @@ import BackgroundStars from "../../components/animations/BackgroundStars";
 import BackgroundCloud from "../../components/animations/BackgroundCloud";
 import FloatingCube from "../../components/animations/FloatingCube";
 
+import {
+  FaLock,
+  FaCloud,
+  FaShieldAlt,
+  FaUniversity,
+  FaGraduationCap,
+  FaBolt,
+  FaGlobe,
+  FaLink,
+  FaFileAlt,
+  FaSearch,
+} from "react-icons/fa";
+
+import { SiEthereum } from "react-icons/si";
 import "../../styles/landing/landing.css";
 
 function Landing() {
@@ -77,19 +91,19 @@ function Landing() {
 
         <div className="highlights">
           <div className="highlight-card">
-            <span>🔒</span>
+            <FaLock className="feature-icon" />
             <h3>SHA-256 Hashing</h3>
             <p>Tamper-proof certificate integrity.</p>
           </div>
 
           <div className="highlight-card">
-            <span>⛓</span>
+            <SiEthereum className="feature-icon" />
             <h3>Ethereum Smart Contracts</h3>
             <p>Blockchain-based certificate verification.</p>
           </div>
 
           <div className="highlight-card">
-            <span>☁️</span>
+            <FaCloud className="feature-icon" />
             <h3>Cloudinary Storage</h3>
             <p>
               Secure PDF certificate storage and delivery using Cloudinary cloud
@@ -98,7 +112,7 @@ function Landing() {
           </div>
 
           <div className="highlight-card">
-            <span>🛡</span>
+            <FaShieldAlt className="feature-icon" />
             <h3>Role-Based Authentication</h3>
             <p>
               JWT-powered access control for College Admins, Students, and
@@ -125,7 +139,9 @@ function Landing() {
 
         <div className="features-grid">
           <div className="feature-card">
-            <span>🔒</span>
+            <span>
+              <FaLock className="feature-icon" />
+            </span>
             <h3>Tamper-Proof Certificates</h3>
             <p>
               Certificate hashes stored on blockchain prevent alteration or
@@ -134,7 +150,9 @@ function Landing() {
           </div>
 
           <div className="feature-card">
-            <span>⚡</span>
+            <span>
+              <FaBolt className="feature-icon" />
+            </span>
             <h3>Instant Verification</h3>
             <p>
               Recruiters can verify certificates instantly using blockchain
@@ -143,7 +161,9 @@ function Landing() {
           </div>
 
           <div className="feature-card">
-            <span>🏫</span>
+            <span>
+              <FaUniversity className="feature-icon" />
+            </span>
             <h3>College Certificate Issuing</h3>
             <p>
               Institutions can upload and issue blockchain-secured certificates.
@@ -151,7 +171,9 @@ function Landing() {
           </div>
 
           <div className="feature-card">
-            <span>🎓</span>
+            <span>
+              <FaGraduationCap className="feature-icon" />
+            </span>
             <h3>Student Dashboard</h3>
             <p>
               Students can view and manage their verified certificates securely.
@@ -159,7 +181,9 @@ function Landing() {
           </div>
 
           <div className="feature-card">
-            <span>🌐</span>
+            <span>
+              <SiEthereum className="feature-icon" />
+            </span>
             <h3>Blockchain Storage</h3>
             <p>
               Certificate hashes are permanently stored on decentralized
@@ -168,7 +192,9 @@ function Landing() {
           </div>
 
           <div className="feature-card">
-            <span>🛡</span>
+            <span>
+              <FaShieldAlt className="feature-icon" />
+            </span>
             <h3>Secure Authentication</h3>
             <p>
               JWT authentication and role-based access control protect user
@@ -177,7 +203,9 @@ function Landing() {
           </div>
 
           <div className="feature-card">
-            <span>☁️</span>
+            <span>
+              <FaCloud className="feature-icon" />
+            </span>
             <h3>Cloud Certificate Storage</h3>
             <p>
               Certificates are securely stored and delivered using Cloudinary
@@ -186,7 +214,9 @@ function Landing() {
           </div>
 
           <div className="feature-card">
-            <span>🔗</span>
+            <span>
+              <FaLink className="feature-icon" />
+            </span>
             <h3>Smart Contract Verification</h3>
             <p>
               Certificate authenticity is validated through Ethereum smart
@@ -195,7 +225,9 @@ function Landing() {
           </div>
 
           <div className="feature-card">
-            <span>📜</span>
+            <span>
+              <FaFileAlt className="feature-icon" />
+            </span>
             <h3>Verification History</h3>
             <p>
               Students can track recruiter verification activities and
@@ -262,7 +294,9 @@ function Landing() {
 
         <div className="demo-grid">
           <div className="demo-card">
-            <span>🏫</span>
+            <span>
+              <FaUniversity className="feature-icon" />
+            </span>
 
             <h3>College Admin</h3>
 
@@ -274,7 +308,9 @@ function Landing() {
           </div>
 
           <div className="demo-card">
-            <span>🎓</span>
+            <span>
+              <FaGraduationCap className="feature-icon" />
+            </span>
 
             <h3>Student</h3>
 
@@ -286,7 +322,9 @@ function Landing() {
           </div>
 
           <div className="demo-card">
-            <span>🔎</span>
+            <span>
+              <FaSearch className="feature-icon" />
+            </span>
 
             <h3>Recruiter</h3>
 

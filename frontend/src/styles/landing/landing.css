@@ -30,6 +30,21 @@ body,
   color: white;
   box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.6);
 }
+
+.feature-icon {
+  font-size: 2.2rem;
+  color: #22d3ee;
+  margin-bottom: 16px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon,
+.highlight-card:hover .feature-icon,
+.demo-card:hover .feature-icon {
+  transform: scale(1.15);
+  color: #8b5cf6;
+}
 /* PARTICLES BACKGROUND */
 .particles {
   position: fixed; /* CHANGE THIS */
