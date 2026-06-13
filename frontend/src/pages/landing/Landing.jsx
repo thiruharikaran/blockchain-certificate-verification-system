@@ -356,7 +356,7 @@ function Landing() {
 
         <div className="video-wrapper">
           <iframe
-            src="https://www.youtube.com/embed/VIDEO_ID"
+            src="https://youtu.be/Ob7WrVgDBBA"
             title="VeriQore Demo"
             frameBorder="0"
             allowFullScreen
