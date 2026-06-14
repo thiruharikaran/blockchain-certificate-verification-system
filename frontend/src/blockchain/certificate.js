@@ -25,14 +25,14 @@ export const addCertificate = async (hash) => {
 
     // Submit certificate hash to blockchain
     const transaction =
-      await contract.addCertificate(
-        hash
-      );
+  await contract.addCertificate(
+    hash
+  );
 
-    // Wait for transaction confirmation
-    await transaction.wait();
+// Wait for transaction confirmation
+await transaction.wait();
 
-    return transaction;
+return transaction.hash;
   } catch (error) {
     console.error(
       "Add Certificate Error:",

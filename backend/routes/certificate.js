@@ -229,21 +229,23 @@ router.delete("/:id", async (req, res) => {
 router.post("/save", verifyToken, async (req, res) => {
   try {
     const {
-      studentId,
-      certificateName,
-      certificateHash,
-      certificateUrl,
-      transactionHash,
-    } = req.body;
+  studentId,
+  certificateName,
+  certificateHash,
+  certificateUrl,
+  transactionHash,
+  fileName,
+} = req.body;
 
     const certificate = await Certificate.create({
-      studentId,
-      certificateName,
-      certificateHash,
-      certificateUrl,
-      transactionHash,
-      uploadedBy: req.user.id,
-    });
+  studentId,
+  certificateName,
+  certificateHash,
+  certificateUrl,
+  transactionHash,
+  fileName,
+  uploadedBy: req.user.id,
+});
 
     res.json({
       success: true,

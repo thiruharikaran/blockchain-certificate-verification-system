@@ -135,13 +135,15 @@ function CollegeAdmin() {
       }
 
       try {
-        await addCertificate(hash);
+        const txHash = await addCertificate(hash);
 
         await api.post("/certificate/save", {
           studentId: selectedStudent,
           certificateName,
           certificateHash: hash,
           certificateUrl: response.data.certificateUrl,
+          transactionHash: txHash,
+          fileName: file.name,
         });
 
         setMessage("✅ Uploaded Successfully + Blockchain Verified");
