@@ -57,9 +57,12 @@ router.post("/issue", verifyToken, upload.single("file"), async (req, res) => {
 });
 
 if (existing) {
+
+  fs.unlinkSync(filePath);
+
   return res.status(400).json({
-    success: false,
-    message: "Certificate already exists (duplicate file)",
+    success:false,
+    message:"Certificate already exists"
   });
 }
       console.log("✅ HASH:", certificateHash);
@@ -105,14 +108,14 @@ try {
   );
 
   console.log("🚀 Storing on blockchain...");
-
+/*
   const tx = await contract.addCertificate(certificateHash);
 
   console.log("⏳ Waiting for confirmation...");
 
   await tx.wait();
 
-  console.log("✅ Stored on blockchain");
+  console.log("✅ Stored on blockchain");*/
 
 }
 catch (err) {
@@ -128,7 +131,7 @@ catch (err) {
 
     let certificate;
 
-    try {
+    try {/*
       certificate = await Certificate.create({
   studentId,
   certificateName,
@@ -137,8 +140,8 @@ catch (err) {
   certificateUrl: cloudinaryResult.secure_url,
   uploadedBy: req.user.id
 });
-
-      console.log("✅ DB SAVED");
+*/
+    //  console.log("✅ DB SAVED");
     } catch (err) {
       console.error("❌ DB ERROR:", err);
       return res.status(500).json({
@@ -150,9 +153,10 @@ catch (err) {
     ////////////////////////////////////////////////////////
 
     res.json({
-      success: true,
-      certificateHash: certificate.certificateHash,
-    });
+  success: true,
+  certificateHash,
+  certificateUrl: cloudinaryResult.secure_url,
+});
   } catch (err) {
     console.error(err);
 
@@ -216,6 +220,43 @@ router.delete("/:id", async (req, res) => {
 
   }
 
+});
+
+////////////////////////////////////////////////////////
+// SAVE CERTIFICATE AFTER BLOCKCHAIN SUCCESS
+////////////////////////////////////////////////////////
+
+router.post("/save", verifyToken, async (req, res) => {
+  try {
+    const {
+      studentId,
+      certificateName,
+      certificateHash,
+      certificateUrl,
+      transactionHash,
+    } = req.body;
+
+    const certificate = await Certificate.create({
+      studentId,
+      certificateName,
+      certificateHash,
+      certificateUrl,
+      transactionHash,
+      uploadedBy: req.user.id,
+    });
+
+    res.json({
+      success: true,
+      certificate,
+    });
+  } catch (err) {
+    console.error("❌ SAVE ERROR:", err);
+
+    res.status(500).json({
+      success: false,
+      message: "Failed to save certificate",
+    });
+  }
 });
 
 ////////////////////////////////////////////////////////

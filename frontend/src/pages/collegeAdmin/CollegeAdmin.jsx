@@ -137,11 +137,18 @@ function CollegeAdmin() {
       try {
         await addCertificate(hash);
 
+        await api.post("/certificate/save", {
+          studentId: selectedStudent,
+          certificateName,
+          certificateHash: hash,
+          certificateUrl: response.data.certificateUrl,
+        });
+
         setMessage("✅ Uploaded Successfully + Blockchain Verified");
       } catch (blockchainError) {
         console.error(blockchainError);
 
-        setMessage("⚠ Uploaded Successfully but Blockchain Storage Failed");
+        setMessage("⚠ Blockchain Storage Failed");
       }
 
       await fetchCertificates();
