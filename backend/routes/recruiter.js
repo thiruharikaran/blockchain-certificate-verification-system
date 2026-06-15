@@ -120,6 +120,7 @@ router.post(
       //////////////////////////////////////////////////
 
       const fileHash = await hashFile(filePath);
+      console.log("VERIFY HASH:", fileHash);
 
       //////////////////////////////////////////////////
       // Check DB
@@ -147,6 +148,8 @@ if (!cert) {
       //////////////////////////////////////////////////
 
       blockchainStatus = await verifyBlockchain(fileHash);
+
+console.log("BLOCKCHAIN RESULT:", blockchainStatus);
 
       //////////////////////////////////////////////////
       // Final decision
