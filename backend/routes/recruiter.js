@@ -206,7 +206,11 @@ await Verification.create({
       res.json({
   success: true,
   message: "✅ Certificate is AUTHENTIC",
+
   hash: fileHash,
+
+  transactionHash: cert.transactionHash,
+
   recruiterCompany: req.user.companyName,
 
   certificate: {
@@ -214,11 +218,13 @@ await Verification.create({
     studentName: cert.studentId.name,
     studentEmail: cert.studentId.email,
 
-    hash: fileHash, // ADD THIS
+    hash: fileHash,
 
     uploadedAt: cert.uploadedAt,
 
-    fileUrl: cert.certificateUrl
+    fileUrl: cert.certificateUrl,
+
+    transactionHash: cert.transactionHash
   }
 });
 
