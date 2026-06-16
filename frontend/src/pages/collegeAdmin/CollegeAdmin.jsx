@@ -313,6 +313,7 @@ function CollegeAdmin() {
               <th>Date</th>
               <th>File</th>
               <th>Action</th>
+              <th>Transaction</th>
             </tr>
           </thead>
 
@@ -338,8 +339,7 @@ function CollegeAdmin() {
                   <td>{certificate.studentId?.name}</td>
 
                   <td className="hash-cell">
-                    {certificate.certificateHash?.slice(0, 12)}
-                    ...
+                    {certificate.certificateHash?.slice(0, 12)}...
                   </td>
 
                   <td>
@@ -369,6 +369,24 @@ function CollegeAdmin() {
                     >
                       Delete
                     </button>
+                  </td>
+
+                  <td>
+                    {certificate.transactionHash ? (
+                      <>
+                        <div>{certificate.transactionHash.slice(0, 10)}...</div>
+
+                        <a
+                          href={`https://sepolia.etherscan.io/tx/${certificate.transactionHash}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          View
+                        </a>
+                      </>
+                    ) : (
+                      "N/A"
+                    )}
                   </td>
                 </tr>
               ))

@@ -147,6 +147,23 @@ function Recruiter() {
                   INVALID CERTIFICATE
                 </div>
               )}
+              <p>
+                <strong>Certificate Hash:</strong>
+                {result.certificateHash}
+              </p>
+
+              <p>
+                <strong>Transaction Hash:</strong>
+                {result.transactionHash}
+              </p>
+
+              <a
+                href={`https://sepolia.etherscan.io/tx/${result.transactionHash}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View on Etherscan
+              </a>
 
               <p className="hash-text">
                 <strong>Hash:</strong> {result.hash}

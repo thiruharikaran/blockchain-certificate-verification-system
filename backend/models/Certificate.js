@@ -35,6 +35,11 @@ const certificateSchema = new mongoose.Schema({
 
 certificateUrl: {
   type: String
+},
+
+transactionHash: {
+  type: String,
+  default: null
 }
 
 });
