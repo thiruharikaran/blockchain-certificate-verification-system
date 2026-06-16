@@ -152,9 +152,11 @@ function Recruiter() {
                 {result.certificateHash}
               </p>
 
-              <p>
+              <p className="hash-text">
                 <strong>Transaction Hash:</strong>
-                {result.transactionHash}
+                <br />
+                {result.transactionHash.slice(0, 10)}...
+                {result.transactionHash.slice(-8)}
               </p>
 
               <a

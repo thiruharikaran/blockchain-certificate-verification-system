@@ -217,6 +217,11 @@
   word-break: break-all;
 }
 
+.hash-text {
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
 /* =======================================================
    PREVIEW PANEL
 ======================================================= */
