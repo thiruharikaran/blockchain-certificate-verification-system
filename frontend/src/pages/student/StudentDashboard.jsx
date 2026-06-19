@@ -115,6 +115,10 @@ function StudentDashboard() {
 
               <div className="hash">{selectedCert.certificateHash}</div>
 
+              <div className="pdf-viewer">
+                <iframe src={pdfUrl} title="certificate" className="pdf" />
+              </div>
+
               <h3 className="verification-title">
                 <FaCheckCircle />
                 Verification Activity ({verifications.length})
@@ -156,10 +160,6 @@ function StudentDashboard() {
                   </div>
                 ))
               )}
-
-              <div className="pdf-viewer">
-                <iframe src={pdfUrl} title="certificate" className="pdf" />
-              </div>
             </div>
           )}
         </div>
