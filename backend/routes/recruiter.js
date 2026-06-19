@@ -164,24 +164,17 @@ console.log("BLOCKCHAIN RESULT:", blockchainStatus);
 const Verification = require("../models/Verification");
 
 // Save verification record
+const recruiter = await User.findById(req.user.id);
+
 await Verification.create({
-
   studentId: cert.studentId._id,
-
   recruiterId: req.user.id,
-
   certificateId: cert._id,
-
   certificateName: cert.certificateName,
-
   certificateHash: fileHash,
-
-  recruiterCompany: req.user.companyName || "Unknown Company",
-
+  recruiterCompany: recruiter.companyName,
   result: isValid ? "VALID" : "INVALID",
-
   createdAt: new Date()
-
 });
       //////////////////////////////////////////////////
       // Response if INVALID
