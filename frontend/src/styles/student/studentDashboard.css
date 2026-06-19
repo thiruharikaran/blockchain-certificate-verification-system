@@ -14,13 +14,16 @@
 .dashboard-body {
   display: flex;
   min-height: calc(100vh - 60px);
-  align-items: flex-start;
 }
 
 .content {
   flex: 1;
-  min-width: 0;
-  padding: 30px;
+  padding: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
   overflow-x: hidden;
 }
 
@@ -30,7 +33,7 @@
 
 .certificate-card {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
 
   background: rgba(15, 23, 42, 0.88);
   backdrop-filter: blur(14px);
@@ -94,8 +97,6 @@
   border-radius: 8px;
 
   margin-top: 10px;
-  word-break: break-word;
-  overflow-wrap: break-word;
 
   font-size: 14px;
 }
@@ -188,9 +189,7 @@
 .sidebar {
   width: 280px;
   min-width: 280px;
-  max-width: 280px;
-  overflow-y: auto;
-  padding: 15px;
+  padding-top: 14px;
 }
 
 .sidebar-item {
