@@ -155,17 +155,20 @@ function Recruiter() {
               <p className="hash-text">
                 <strong>Transaction Hash:</strong>
                 <br />
-                {result.transactionHash.slice(0, 10)}...
-                {result.transactionHash.slice(-8)}
+                {result.transactionHash
+                  ? `${result.transactionHash.slice(0, 10)}...${result.transactionHash.slice(-8)}`
+                  : "Transaction Hash Not Available"}
               </p>
 
-              <a
-                href={`https://sepolia.etherscan.io/tx/${result.transactionHash}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                View on Etherscan
-              </a>
+              {result.transactionHash && (
+                <a
+                  href={`https://sepolia.etherscan.io/tx/${result.transactionHash}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View on Etherscan
+                </a>
+              )}
 
               <p className="hash-text">
                 <strong>Hash:</strong> {result.hash}
@@ -191,19 +194,19 @@ function Recruiter() {
               <div className="detail-row">
                 <span>Certificate</span>
 
-                <strong>{result.certificate.name}</strong>
+                <strong>{result?.certificate?.name || "N/A"}</strong>
               </div>
 
               <div className="detail-row">
                 <span>Student</span>
 
-                <strong>{result.certificate.studentName}</strong>
+                <strong>{result?.certificate?.studentName || "N/A"}</strong>
               </div>
 
               <div className="detail-row">
                 <span>Email</span>
 
-                <strong>{result.certificate.studentEmail}</strong>
+                <strong>{result?.certificate?.studentEmail || "N/A"}</strong>
               </div>
 
               <div className="hash-section">
@@ -211,7 +214,9 @@ function Recruiter() {
                   <strong>Hash:</strong>
                 </p>
 
-                <div className="hash-box">{result.certificate.hash}</div>
+                <div className="hash-box">
+                  {result?.certificate?.hash || "N/A"}
+                </div>
               </div>
 
               <h4>
@@ -220,7 +225,10 @@ function Recruiter() {
               </h4>
 
               <div className="pdf-wrapper">
-                <iframe src={result.certificate.fileUrl} title="certificate" />
+                <iframe
+                  src={result?.certificate?.fileUrl || ""}
+                  title="certificate"
+                />
               </div>
             </div>
           )}
