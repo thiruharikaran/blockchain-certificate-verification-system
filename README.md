@@ -360,43 +360,89 @@ Demo credentials are available directly on the login page.
 
 ---
 
-## Screenshots
+## 📸 Screenshots
 
-### Landing Page
+### 🏠 Landing Page
 
-(Add Screenshot)
+![Landing Page](screenshots/landing-page.png)
 
-### Login Page
+---
 
-(Add Screenshot)
+### ⭐ Project Highlights
 
-### Master Administrator Dashboard
+![Project Highlights](screenshots/project-highlights.png)
 
-(Add Screenshot)
+---
 
-### College Administrator Dashboard
+### 🚀 Platform Features
 
-(Add Screenshot)
+![Platform Features](screenshots/features.png)
 
-### Student Dashboard
+---
 
-(Add Screenshot)
+### 🔄 How It Works
 
-### Recruiter Dashboard
+![Workflow](screenshots/how-it-works.png)
 
-(Add Screenshot)
+---
 
-### Certificate Verification Result
+### 👥 Demo Accounts
 
-(Add Screenshot)
+![Demo Accounts](screenshots/demo-accounts.png)
 
-### Verification History
+---
 
-(Add Screenshot)
+### 💻 Technology Stack
 
-### Error Pages
+![Technology Stack](screenshots/technology-stack.png)
 
-(Add Screenshot)
+---
+
+### 🔐 Login Page
+
+![Login](screenshots/login-page.png)
+
+---
+
+### 👑 Master Administrator Dashboard
+
+![Master Admin](screenshots/master-admin-dashboard.png)
+
+---
+
+### 🏫 College Administrator Dashboard
+
+![College Admin](screenshots/college-admin-dashboard.png)
+
+---
+
+### 🎓 Student Dashboard
+
+![Student Dashboard](screenshots/student-dashboard.png)
+
+---
+
+### 💼 Recruiter Dashboard
+
+![Recruiter Dashboard](screenshots/recruiter-dashboard.png)
+
+---
+
+### ✅ Certificate Verification Result
+
+![Verification Result](screenshots/verification-result.png)
+
+---
+
+### 📜 Verification History
+
+![Verification History](screenshots/verification-history.png)
+
+---
+
+### ⚠️ Error Pages
+
+![Error Pages](screenshots/error-pages.png)
 
 ---
 
@@ -479,11 +525,44 @@ Certificate fingerprints cannot be modified after blockchain confirmation.
 
 ## Project Structure
 
-blockchain-certificate-verification
-
-├── frontend
-├── backend
-├── blockchain
+blockchain-certificate-verification  
+│  
+├── frontend  
+│ ├── public  
+│ ├── src  
+│ │ ├── api  
+│ │ ├── assets  
+│ │ ├── blockchain  
+│ │ ├── components  
+│ │ ├── pages  
+│ │ ├── styles  
+│ │ ├── App.jsx  
+│ │ └── main.jsx  
+│ ├── package.json  
+│ └── vite.config.js  
+│  
+├── backend  
+│ ├── auth  
+│ ├── blockchain  
+│ ├── config  
+│ ├── middleware  
+│ ├── models  
+│ ├── routes  
+│ ├── utils  
+│ ├── uploads  
+│ ├── server.js  
+│ └── package.json  
+│  
+├── blockchain  
+│ ├── contracts  
+│ ├── scripts  
+│ ├── artifacts  
+│ ├── cache  
+│ ├── hardhat.config.js  
+│ └── package.json  
+│  
+├── screenshots  
+│  
 └── README.md
 
 ---
