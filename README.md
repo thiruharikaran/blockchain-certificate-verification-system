@@ -1,154 +1,225 @@
-# VeriQore – Blockchain-Based Certificate Verification System
+# VeriQore
 
-## Overview
+### Blockchain-Based Academic Certificate Verification System
 
-VeriQore is a full-stack blockchain-based certificate verification platform designed to address academic certificate fraud through cryptographic hashing, blockchain technology, cloud storage, and role-based authentication.
+VeriQore is a full-stack blockchain-based certificate verification platform that enables educational institutions to issue secure digital certificates and allows recruiters to instantly verify certificate authenticity using blockchain technology.
 
-The platform enables educational institutions to issue secure digital certificates, allows students to access and monitor their credentials, and enables recruiters to verify certificate authenticity without contacting the issuing institution.
-
-VeriQore combines React.js, Node.js, Express.js, MongoDB Atlas, Cloudinary, Ethereum Sepolia, Solidity smart contracts, MetaMask integration, JWT authentication, and SHA-256 hashing to create a secure and transparent certificate verification ecosystem.
+The platform combines **SHA-256 cryptographic hashing**, **Ethereum blockchain**, **Solidity smart contracts**, **Cloudinary cloud storage**, **MongoDB Atlas**, and **JWT-based role authentication** to create a secure, transparent, scalable, and tamper-resistant certificate verification ecosystem.
 
 ---
 
-## Live Demo
+## 🌐 Live Demo
 
-Application:
+**Application**
 
 https://veriqore.vercel.app
 
 ---
 
-## Demo Video
+# ✨ Key Features
 
-A complete walkthrough demonstrating:
-
-- Landing Page
-- Authentication System
-- Master Admin Dashboard
-- College Admin Dashboard
-- Student Dashboard
-- Recruiter Dashboard
-- Certificate Issuance Workflow
-- Blockchain Integration
-- Certificate Verification Process
-- Verification History Tracking
-- Error Handling Pages
-
-Video link will be added soon.
+| Feature                     | Description                                                             |
+| --------------------------- | ----------------------------------------------------------------------- |
+| 🔐 SHA-256 Hashing          | Generates a unique digital fingerprint for every certificate            |
+| ⛓ Ethereum Blockchain       | Stores immutable certificate hashes on Ethereum Sepolia                 |
+| 📄 Certificate Verification | Instantly verifies certificate authenticity                             |
+| ☁ Cloudinary Storage        | Securely stores original certificate PDFs                               |
+| 👥 Role-Based Access        | Separate portals for Master Admin, College Admin, Student and Recruiter |
+| 📜 Verification History     | Records recruiter verification activities                               |
+| 🛡 JWT Authentication       | Protects API endpoints and user sessions                                |
+| 🚫 Duplicate Detection      | Prevents duplicate certificate uploads before blockchain storage        |
 
 ---
 
-## Problem Statement
+# 📖 Overview
 
-Academic certificate fraud remains a significant challenge for educational institutions, students, and recruiters.
+Academic certificate fraud has become a significant challenge for educational institutions, students, and recruiters. Traditional verification methods often require manual communication with institutions, resulting in long verification times, administrative overhead, increased operational costs, and opportunities for certificate forgery.
 
-Traditional certificate verification methods often require manual communication with institutions, resulting in:
+VeriQore addresses these challenges by introducing a blockchain-powered certificate verification platform that combines cryptographic hashing, decentralized blockchain technology, secure cloud storage, and role-based authentication.
 
-- Long verification times
-- Administrative overhead
-- Increased operational costs
+The platform enables educational institutions to issue secure academic certificates, allows students to access and monitor their certificates, and provides recruiters with an instant method to verify certificate authenticity without contacting the issuing institution.
+
+VeriQore is developed using modern full-stack technologies including React.js, Node.js, Express.js, MongoDB Atlas, Cloudinary, Solidity Smart Contracts, Ethereum Sepolia, MetaMask, Web3.js, JWT Authentication, and SHA-256 Hashing.
+
+---
+
+# 🏗️ System Architecture
+
+The following architecture diagram illustrates the complete VeriQore workflow, including certificate issuance, SHA-256 hashing, blockchain storage, cloud storage, smart contract interaction, database management, and certificate verification.
+
+<p align="center">
+<img src="./screenshots/system-architecture.png" width="100%">
+</p>
+
+The architecture combines multiple technologies to provide an end-to-end certificate verification solution.
+
+### Cloudinary
+
+Stores the original certificate PDF securely.
+
+### SHA-256
+
+Generates a unique cryptographic fingerprint for every uploaded certificate.
+
+### Ethereum Sepolia Blockchain
+
+Stores immutable certificate hashes using Solidity Smart Contracts.
+
+### MongoDB Atlas
+
+Stores certificate metadata, blockchain transaction references, user information, verification history, and application data.
+
+### MetaMask
+
+Requests user authorization before blockchain transactions are executed.
+
+Together these components provide a secure, transparent, and tamper-resistant certificate verification platform.
+
+---
+
+# ❓ Problem Statement
+
+Academic certificate verification continues to rely heavily on manual validation from educational institutions.
+
+This traditional approach introduces several challenges:
+
+- Manual verification process
+- Long processing time
+- Administrative workload
 - Risk of forged certificates
 - Lack of transparency
+- Difficulty verifying certificates internationally
 
-VeriQore addresses these challenges by introducing blockchain-backed certificate verification that enables instant authenticity validation.
+VeriQore solves these problems by introducing blockchain-backed certificate verification, allowing recruiters to verify certificate authenticity instantly through cryptographic fingerprint comparison.
 
 ---
 
-## Project Objectives
+# 🎯 Project Objectives
+
+The primary objectives of VeriQore are:
 
 - Prevent academic certificate forgery
 - Detect certificate tampering instantly
-- Eliminate manual verification processes
+- Eliminate manual certificate verification
 - Provide blockchain-backed transparency
-- Enable secure certificate issuance
-- Create a scalable certificate verification platform
+- Secure certificate issuance
+- Enable trusted recruiter verification
+- Reduce blockchain storage cost by storing only certificate hashes
+- Create a scalable and secure verification platform
 
 ---
 
-## Core Features
+# 🚀 Core Features
 
-### Blockchain Certificate Issuance
+## Blockchain Certificate Issuance
 
-Educational institutions can securely issue certificates to students.
+Educational institutions can securely issue digital certificates to students.
 
-Each certificate receives a blockchain-backed verification record.
-
----
-
-### SHA-256 Certificate Hashing
-
-Each uploaded certificate is converted into a SHA-256 cryptographic hash.
-
-The generated hash acts as the certificate's digital fingerprint.
-
-Any modification to the certificate generates a completely different hash value.
+Each certificate receives a blockchain-backed verification record, ensuring long-term authenticity and transparency.
 
 ---
 
-### Ethereum Blockchain Verification
+## SHA-256 Certificate Hashing
 
-Certificate hashes are stored on the Ethereum Sepolia blockchain using Solidity smart contracts.
+Every uploaded certificate is processed using the SHA-256 cryptographic hashing algorithm.
+
+Instead of storing or verifying certificates using the:
+
+- File Name
+- File Size
+- Upload Date
+- File Location
+
+VeriQore verifies the **actual contents of the certificate**.
+
+The generated SHA-256 hash acts as a unique digital fingerprint.
+
+If even a single character changes within the certificate, an entirely different hash is generated.
+
+This makes SHA-256 highly effective for detecting certificate tampering.
+
+---
+
+## Ethereum Blockchain Verification
+
+Certificate hashes are permanently stored on the Ethereum Sepolia blockchain through Solidity Smart Contracts.
 
 Blockchain storage provides:
 
 - Immutability
 - Transparency
-- Public verification
-- Tamper resistance
+- Public Verification
+- Tamper Resistance
+
+Because only the certificate fingerprint is stored on-chain, blockchain storage costs remain low while maintaining document integrity.
 
 ---
 
-### Smart Contract Integration
+## Smart Contract Integration
 
-VeriQore uses a Solidity smart contract deployed on the Ethereum Sepolia network.
+VeriQore integrates a Solidity Smart Contract responsible for blockchain certificate registration.
 
-The smart contract is responsible for:
+Responsibilities include:
 
-- Storing certificate SHA-256 hashes
-- Maintaining immutable verification records
+- Storing SHA-256 certificate hashes
+- Maintaining immutable certificate records
+- Returning stored hashes during verification
 - Providing blockchain-backed proof of authenticity
-- Preventing modification of issued certificate fingerprints
 
 Smart Contract:
 
-CertificateVerification.sol
+**CertificateVerification.sol**
 
 ---
 
-### Cloudinary Integration
+## Cloudinary Integration
 
-Original certificate PDFs are securely stored using Cloudinary.
+The original certificate PDF is securely stored using Cloudinary cloud storage.
 
-Only certificate fingerprints are stored on-chain.
+Instead of storing large PDF files on-chain, VeriQore stores only the SHA-256 fingerprint on Ethereum.
 
-This significantly reduces blockchain storage costs.
+Benefits include:
+
+- Lower blockchain cost
+- Faster blockchain transactions
+- Improved scalability
+- Secure document storage
 
 ---
 
-### Role-Based Access Control
+## Role-Based Access Control
 
-The platform supports four user roles:
+VeriQore supports four independent user roles.
 
 - Master Administrator
 - College Administrator
 - Student
 - Recruiter
 
-Each role has dedicated permissions and protected routes.
+Each role has dedicated dashboards, permissions, protected routes, and access controls enforced using JWT authentication.
 
 ---
 
-### Verification History Tracking
+## Verification History
 
-Verification activities are recorded and made available to authorized users.
+Every certificate verification performed by recruiters is securely recorded.
 
-Students can track verification activity associated with their certificates.
+Students can monitor:
+
+- Who verified the certificate
+- Verification result
+- Verification date
+- Recruiter information
+
+This improves transparency and accountability.
 
 ---
 
-### Custom Error Handling
+## Custom Error Handling
 
-The application includes dedicated error pages for:
+VeriQore includes dedicated error pages for improved usability and security.
+
+Supported pages include:
 
 - 401 Unauthorized
 - 403 Forbidden
@@ -157,143 +228,172 @@ The application includes dedicated error pages for:
 
 ---
 
-## System Architecture
+# 🔐 SHA-256 Hashing Workflow
 
-### MongoDB Atlas
+One of the core technologies used in VeriQore is **SHA-256 Cryptographic Hashing**.
 
-Stores:
+SHA-256 can be thought of as a **unique digital fingerprint** of a certificate.
 
-- User Information
-- Student Information
-- College Information
-- Certificate Metadata
-- Verification Records
-- Blockchain Transaction References
+When a College Administrator uploads a certificate PDF, VeriQore reads the **actual contents** of the document, including the student's academic information, and generates a unique SHA-256 hash.
 
-### Cloudinary
-
-Stores:
-
-- Original Certificate PDFs
-
-### Ethereum Sepolia Blockchain
-
-Stores:
-
-- SHA-256 Certificate Hashes
-
-### MetaMask
-
-Handles:
-
-- Wallet Connection
-- Transaction Authorization
-- Transaction Signing
-
----
-
-## SHA-256 Hashing Workflow
-
-When a certificate PDF is uploaded:
-
-1. The system reads the document.
-2. SHA-256 generates a unique hash.
-3. The hash becomes the certificate's digital fingerprint.
-
-VeriQore does not verify certificates using:
+The platform **does not** verify certificates using:
 
 - File Name
 - File Size
-- Upload Date
 - File Location
+- Upload Date
 
-Instead, verification is performed using the actual document contents.
+Instead, VeriQore verifies the **actual contents** inside the certificate.
 
-If even a single character changes within the certificate, a completely different hash is generated.
+If even a single character changes within the certificate, SHA-256 generates an entirely different hash value.
 
 This allows VeriQore to instantly detect certificate tampering.
 
----
+### SHA-256 Verification Process
 
-## Certificate Issuance Workflow
-
-College Administrator Uploads Certificate
-
-↓
-
+```
+Certificate PDF
+        │
+        ▼
 Generate SHA-256 Hash
-
-↓
-
-Duplicate Certificate Detection
-
-↓
-
-Upload PDF to Cloudinary
-
-↓
-
-Prepare Certificate Metadata
-
-↓
-
-MetaMask Approval
-
-↓
-
-Store Hash on Ethereum Sepolia
-
-↓
-
-Receive Blockchain Transaction Hash
-
-↓
-
-Store Metadata in MongoDB Atlas
-
-↓
-
-Certificate Successfully Issued
-
----
-
-## Certificate Verification Workflow
-
+        │
+        ▼
+Store Hash on Ethereum Blockchain
+        │
+        ▼
 Recruiter Uploads Certificate
+        │
+        ▼
+Generate New SHA-256 Hash
+        │
+        ▼
+Compare Both Hashes
+        │
+        ├───────────────┐
+        │               │
+        ▼               ▼
+     VALID          INVALID
+```
 
-↓
+Only the SHA-256 fingerprint is stored on the blockchain.
 
-Generate SHA-256 Hash
-
-↓
-
-Retrieve Blockchain Hash
-
-↓
-
-Compare Hashes
-
-↓
-
-Verification Result
-
-If Hashes Match:
-
-VALID
-
-If Hashes Do Not Match:
-
-INVALID
+The original certificate PDF remains securely stored in Cloudinary.
 
 ---
 
-## User Roles
+# 📄 Certificate Issuance Workflow
 
-### Master Administrator
+The certificate issuance process consists of multiple security layers before a certificate becomes permanently registered.
 
-Platform-wide administration.
+```
+College Administrator Uploads Certificate
+                │
+                ▼
+Generate SHA-256 Hash
+                │
+                ▼
+Duplicate Detection
+                │
+                ▼
+Upload Original PDF to Cloudinary
+                │
+                ▼
+Prepare Certificate Metadata
+                │
+                ▼
+MetaMask Transaction Approval
+                │
+                ▼
+Store Certificate Hash on Ethereum Sepolia
+                │
+                ▼
+Receive Blockchain Transaction Hash
+                │
+                ▼
+Store Metadata in MongoDB Atlas
+                │
+                ▼
+Certificate Successfully Issued
+```
 
-Capabilities:
+### Certificate Issuance Summary
+
+During issuance:
+
+✅ Original PDF → Cloudinary
+
+✅ Certificate Hash → Ethereum Blockchain
+
+✅ Certificate Metadata → MongoDB Atlas
+
+This hybrid architecture minimizes blockchain storage while maintaining security and transparency.
+
+---
+
+# ✅ Certificate Verification Workflow
+
+Recruiters can verify certificate authenticity without contacting the issuing institution.
+
+The verification process is fully automated.
+
+```
+Recruiter Uploads Certificate
+               │
+               ▼
+Generate SHA-256 Hash
+               │
+               ▼
+Retrieve Blockchain Hash
+               │
+               ▼
+Compare Both Hashes
+               │
+        ┌──────┴──────┐
+        ▼             ▼
+     VALID         INVALID
+```
+
+### Verification Logic
+
+If
+
+```
+Generated Hash
+=
+Blockchain Hash
+```
+
+Result:
+
+✅ VALID
+
+If
+
+```
+Generated Hash
+≠
+Blockchain Hash
+```
+
+Result:
+
+❌ INVALID
+
+This enables VeriQore to instantly detect forged or modified certificates.
+
+---
+
+# 👥 User Roles
+
+VeriQore supports four independent user roles with dedicated dashboards and permissions.
+
+---
+
+## 👑 Master Administrator
+
+The Master Administrator has complete control over the platform.
+
+### Responsibilities
 
 - Dashboard Analytics
 - College Management
@@ -303,283 +403,383 @@ Capabilities:
 - Certificate Monitoring
 - Verification Monitoring
 
+The Master Administrator manages the overall platform while maintaining role-based access control.
+
 ---
 
-### College Administrator
+## 🏫 College Administrator
 
-Certificate issuance and management.
+College Administrators are responsible for issuing academic certificates.
 
-Capabilities:
+### Responsibilities
 
 - Student Management
 - Certificate Upload
 - SHA-256 Hash Generation
+- Duplicate Detection
 - Blockchain Registration
 - Certificate Monitoring
 
----
-
-### Student
-
-Student self-service portal.
-
-Capabilities:
-
-- View Certificates
-- View Certificate Information
-- View Blockchain Details
-- View Verification History
+Only authorized College Administrators can issue certificates.
 
 ---
 
-### Recruiter
+## 🎓 Student
 
-Certificate verification portal.
+Students can securely access certificates issued by their institution.
 
-Capabilities:
+### Responsibilities
 
-- Upload Certificates
+- View Issued Certificates
+- View Certificate Details
+- Access Blockchain Information
+- Monitor Verification History
+
+Students cannot modify certificate records.
+
+---
+
+## 💼 Recruiter
+
+Recruiters verify certificate authenticity.
+
+### Responsibilities
+
+- Upload Certificate
 - Verify Authenticity
-- View Verification Results
+- View Verification Result
 - Access Blockchain References
 
----
-
-## Demo Access
-
-VeriQore includes role-based demo accounts allowing visitors to explore the platform.
-
-Available Roles:
-
-- Master Administrator
-- College Administrator
-- Student
-- Recruiter
-
-Demo credentials are available directly on the login page.
+Recruiters can instantly validate certificates without contacting educational institutions.
 
 ---
 
-## 📸 Screenshots
+# 🔑 Demo Access
 
-### 🏠 Landing Page
+VeriQore includes built-in demo accounts that allow recruiters, developers, and reviewers to explore the platform without creating new accounts.
+
+Available demo roles include:
+
+- 👑 Master Administrator
+- 🏫 College Administrator
+- 🎓 Student
+- 💼 Recruiter
+
+All demo credentials are available directly on the Login page.
+
+---
+
+# 📸 Project Screenshots
+
+The following screenshots demonstrate the major components and workflows of VeriQore.
+
+---
+
+## 🏠 Landing Page
 
 ![Landing Page](screenshots/landing-page.png)
 
 ---
 
-### ⭐ Project Highlights
+## 🏗️ System Architecture
+
+![System Architecture](screenshots/system-architecture.png)
+
+---
+
+## ⭐ Project Highlights
 
 ![Project Highlights](screenshots/project-highlights.png)
 
 ---
 
-### 🚀 Platform Features
+## 🚀 Platform Features
 
 ![Platform Features](screenshots/features.png)
 
 ---
 
-### 🔄 How It Works
+## 🔄 How VeriQore Works
 
 ![Workflow](screenshots/how-it-works.png)
 
 ---
 
-### 👥 Demo Accounts
+## 👥 Demo Accounts
 
 ![Demo Accounts](screenshots/demo-accounts.png)
 
 ---
 
-### 💻 Technology Stack
+## 💻 Technology Stack
 
 ![Technology Stack](screenshots/technology-stack.png)
 
 ---
 
-### 🔐 Login Page
+## 🔐 Login Page
 
-![Login](screenshots/login-page.png)
-
----
-
-### 👑 Master Administrator Dashboard
-
-![Master Admin](screenshots/master-admin-dashboard.png)
+![Login Page](screenshots/login-page.png)
 
 ---
 
-### 🏫 College Administrator Dashboard
+## 👑 Master Administrator Dashboard
 
-![College Admin](screenshots/college-admin-dashboard.png)
+![Master Administrator](screenshots/master-admin-dashboard.png)
 
 ---
 
-### 🎓 Student Dashboard
+## 🏫 College Administrator Dashboard
+
+![College Administrator](screenshots/college-admin-dashboard.png)
+
+---
+
+## 🎓 Student Dashboard
 
 ![Student Dashboard](screenshots/student-dashboard.png)
 
 ---
 
-### 💼 Recruiter Dashboard
+## 💼 Recruiter Dashboard
 
 ![Recruiter Dashboard](screenshots/recruiter-dashboard.png)
 
 ---
 
-### ✅ Certificate Verification Result
+## ✅ Certificate Verification Result
 
 ![Verification Result](screenshots/verification-result.png)
 
 ---
 
-### 📜 Verification History
+## 📜 Verification History
 
 ![Verification History](screenshots/verification-history.png)
 
 ---
 
-### ⚠️ Error Pages
+# ⛓️ Blockchain Interaction
+
+The following screenshots demonstrate the blockchain integration used by VeriQore.
+
+> **Note:** These screenshots will be added in a future update.
+
+### MetaMask Transaction Approval
+
+```
+screenshots/metamask-transaction.png
+```
+
+---
+
+### Ethereum Smart Contract
+
+```
+screenshots/smart-contract.png
+```
+
+---
+
+### Etherscan Transaction
+
+```
+screenshots/etherscan-transaction.png
+```
+
+---
+
+## ⚠️ Error Pages
 
 ![Error Pages](screenshots/error-pages.png)
 
 ---
 
-## Security Features
+# 🛡️ Security Features
 
-### JWT Authentication
+## JWT Authentication
 
-Secures user sessions and API access.
-
-### Protected Routes
-
-Prevents unauthorized access to restricted resources.
-
-### Role-Based Authorization
-
-Access permissions are enforced based on assigned roles.
-
-### Duplicate Certificate Detection
-
-Helps prevent duplicate certificate issuance.
-
-### MetaMask Transaction Approval
-
-Blockchain transactions require explicit user approval.
-
-### Blockchain Immutability
-
-Certificate fingerprints cannot be modified after blockchain confirmation.
+Secures user sessions and protects backend API endpoints.
 
 ---
 
-## Technology Stack
+## Protected Routes
+
+Restricts unauthorized users from accessing protected resources.
+
+---
+
+## Role-Based Authorization
+
+Permissions are enforced based on the authenticated user's role.
+
+---
+
+## SHA-256 Integrity Verification
+
+Every uploaded certificate receives a unique SHA-256 cryptographic fingerprint.
+
+This allows VeriQore to instantly detect certificate tampering.
+
+---
+
+## Duplicate Certificate Detection
+
+Duplicate certificates are detected before blockchain registration, preventing redundant blockchain transactions and unnecessary gas consumption.
+
+---
+
+## MetaMask Transaction Approval
+
+Every blockchain transaction requires explicit user authorization through MetaMask before being executed.
+
+---
+
+## Blockchain Immutability
+
+Certificate hashes stored on Ethereum Sepolia cannot be modified after blockchain confirmation, providing long-term integrity and transparency.
+
+---
+
+# 💻 Technology Stack
+
+VeriQore is built using a modern full-stack architecture that combines web technologies, blockchain development, cloud storage, and secure authentication.
+
+| Category                     | Technologies                                      |
+| ---------------------------- | ------------------------------------------------- |
+| **Frontend**                 | React.js, React Router, Axios, Framer Motion, CSS |
+| **Backend**                  | Node.js, Express.js                               |
+| **Database**                 | MongoDB Atlas                                     |
+| **Cloud Storage**            | Cloudinary                                        |
+| **Blockchain**               | Ethereum Sepolia                                  |
+| **Smart Contract**           | Solidity                                          |
+| **Blockchain Communication** | Web3.js                                           |
+| **Wallet Integration**       | MetaMask                                          |
+| **Authentication**           | JWT (JSON Web Token)                              |
+| **Security**                 | SHA-256 Cryptographic Hashing                     |
+
+---
+
+# 🗄️ Database Collections
+
+VeriQore uses MongoDB Atlas to manage application data through the following collections:
+
+| Collection              | Purpose                                                                                         |
+| ----------------------- | ----------------------------------------------------------------------------------------------- |
+| **Users**               | Stores authentication credentials and role information                                          |
+| **Students**            | Stores student profile information                                                              |
+| **Colleges**            | Stores registered college details                                                               |
+| **Certificates**        | Stores certificate metadata, Cloudinary URLs, blockchain transaction hashes, and SHA-256 hashes |
+| **Recruiters**          | Stores recruiter information                                                                    |
+| **VerificationHistory** | Stores recruiter verification activities and verification logs                                  |
+
+---
+
+# 📂 Project Structure
+
+```
+blockchain-certificate-verification-system
+│
+├── frontend
+│   ├── public
+│   ├── src
+│   │   ├── api
+│   │   ├── assets
+│   │   ├── blockchain
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── styles
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── package.json
+│   └── vite.config.js
+│
+├── backend
+│   ├── auth
+│   ├── blockchain
+│   ├── config
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   ├── utils
+│   ├── uploads
+│   ├── server.js
+│   └── package.json
+│
+├── blockchain
+│   ├── contracts
+│   ├── scripts
+│   ├── artifacts
+│   ├── cache
+│   ├── hardhat.config.js
+│   └── package.json
+│
+├── screenshots
+│
+└── README.md
+```
+
+The project is organized into three major modules:
 
 ### Frontend
 
-- React.js
-- React Router
-- Axios
-- Framer Motion
-- CSS
+Responsible for:
+
+- User Interface
+- Dashboard Pages
+- Routing
+- API Communication
+- Blockchain Interaction
+- Responsive Design
+
+---
 
 ### Backend
 
-- Node.js
-- Express.js
+Responsible for:
 
-### Database
+- REST APIs
+- Authentication
+- Authorization
+- Certificate Management
+- Database Operations
+- Blockchain Verification
 
-- MongoDB Atlas
-
-### Cloud Storage
-
-- Cloudinary
+---
 
 ### Blockchain
 
-- Ethereum Sepolia
+Responsible for:
 
-### Smart Contracts
-
-- Solidity
-
-### Wallet Integration
-
-- MetaMask
-
-### Blockchain Communication
-
-- Web3.js
-
-### Authentication
-
-- JWT
-
-### Security
-
-- SHA-256 Hashing
+- Smart Contract Development
+- Certificate Hash Storage
+- Blockchain Deployment
+- Ethereum Integration
 
 ---
 
-## Project Structure
+# ⚠️ Error Handling
 
-blockchain-certificate-verification  
-│  
-├── frontend  
-│ ├── public  
-│ ├── src  
-│ │ ├── api  
-│ │ ├── assets  
-│ │ ├── blockchain  
-│ │ ├── components  
-│ │ ├── pages  
-│ │ ├── styles  
-│ │ ├── App.jsx  
-│ │ └── main.jsx  
-│ ├── package.json  
-│ └── vite.config.js  
-│  
-├── backend  
-│ ├── auth  
-│ ├── blockchain  
-│ ├── config  
-│ ├── middleware  
-│ ├── models  
-│ ├── routes  
-│ ├── utils  
-│ ├── uploads  
-│ ├── server.js  
-│ └── package.json  
-│  
-├── blockchain  
-│ ├── contracts  
-│ ├── scripts  
-│ ├── artifacts  
-│ ├── cache  
-│ ├── hardhat.config.js  
-│ └── package.json  
-│  
-├── screenshots  
-│  
-└── README.md
-
----
-
-## Error Pages
+VeriQore includes dedicated error pages to improve usability and user experience.
 
 ### 401 Unauthorized
 
-Displayed when users attempt to access protected resources without authentication.
+Displayed when an unauthenticated user attempts to access protected resources.
+
+---
 
 ### 403 Forbidden
 
-Displayed when users attempt to access resources outside their permissions.
+Displayed when an authenticated user attempts to access resources outside their assigned role.
+
+---
 
 ### 404 Not Found
 
-Displayed when users navigate to unavailable routes.
+Displayed when users navigate to unavailable pages or invalid routes.
+
+---
 
 ### 500 Internal Server Error
 
@@ -587,38 +787,59 @@ Displayed when unexpected server-side failures occur.
 
 ---
 
-## Future Enhancements
+# 🚀 Future Enhancements
 
 Potential future improvements include:
 
-- IPFS Integration
-- QR Code Verification
+- IPFS Integration for decentralized certificate storage
+- QR Code-based Certificate Verification
 - Mobile Application
 - Multi-University Support
-- Decentralized Identity Integration
+- Decentralized Identity (DID) Integration
+- Multi-Language Support
+- Email Notification System
+- Certificate Expiration Management
+- Blockchain Analytics Dashboard
 
 ---
 
-## Author
+# 👨‍💻 Author
 
-**Thiruharikaran R**
+## Thiruharikaran R
+
+**Blockchain & Full-Stack Developer**
 
 B.Tech Information Technology
 
-Blockchain & Full-Stack Developer
+### Areas of Interest
+
+- Full-Stack Web Development
+- Blockchain Development
+- Smart Contracts
+- Web3 Applications
+- Cloud Computing
+- Secure Software Systems
 
 ---
 
-## Usage Notice
+# 📄 Usage Notice
 
-This project was developed for portfolio, learning, and demonstration purposes.
+This project was developed for learning, portfolio, and demonstration purposes.
 
 All rights reserved © Thiruharikaran R.
 
 ---
 
-## Conclusion
+# 🎯 Conclusion
 
-VeriQore demonstrates how blockchain technology can be integrated with modern web applications to build a secure, transparent, and tamper-resistant certificate verification platform.
+VeriQore demonstrates how blockchain technology can be integrated with modern full-stack web applications to build a secure, transparent, and tamper-resistant academic certificate verification platform.
 
-By combining SHA-256 hashing, Ethereum blockchain, Cloudinary cloud storage, MongoDB Atlas, JWT authentication, MetaMask integration, and role-based access control, VeriQore provides an end-to-end solution for trusted academic credential verification.
+By combining **SHA-256 cryptographic hashing**, **Ethereum blockchain**, **Solidity Smart Contracts**, **Cloudinary cloud storage**, **MongoDB Atlas**, **JWT Authentication**, and **role-based access control**, VeriQore provides a complete end-to-end solution for secure certificate issuance and trusted certificate verification.
+
+The project highlights practical implementation of blockchain technology in real-world educational systems while improving transparency, reducing manual verification efforts, and protecting academic credentials against tampering and forgery.
+
+---
+
+## ⭐ If you found this project interesting, consider giving it a star.
+
+Thank you for visiting the VeriQore repository.
