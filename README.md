@@ -18,16 +18,16 @@ https://veriqore.vercel.app
 
 # ✨ Key Features
 
-| Feature                     | Description                                                             |
-| --------------------------- | ----------------------------------------------------------------------- |
-| 🔐 SHA-256 Hashing          | Generates a unique digital fingerprint for every certificate            |
-| ⛓ Ethereum Blockchain       | Stores immutable certificate hashes on Ethereum Sepolia                 |
-| 📄 Certificate Verification | Instantly verifies certificate authenticity                             |
-| ☁ Cloudinary Storage        | Securely stores original certificate PDFs                               |
-| 👥 Role-Based Access        | Separate portals for Master Admin, College Admin, Student and Recruiter |
-| 📜 Verification History     | Records recruiter verification activities                               |
-| 🛡 JWT Authentication       | Protects API endpoints and user sessions                                |
-| 🚫 Duplicate Detection      | Prevents duplicate certificate uploads before blockchain storage        |
+| Feature                     | Description                                                              |
+| --------------------------- | ------------------------------------------------------------------------ |
+| 🔐 SHA-256 Hashing          | Generates a unique digital fingerprint for every certificate             |
+| ⛓️ Ethereum Blockchain      | Stores immutable certificate hashes on Ethereum Sepolia                  |
+| 📄 Certificate Verification | Instantly verifies certificate authenticity                              |
+| ☁️ Cloudinary Storage       | Securely stores original certificate PDFs                                |
+| 👥 Role-Based Access        | Separate portals for Master Admin, College Admin, Student, and Recruiter |
+| 📜 Verification History     | Records recruiter verification activities                                |
+| 🛡️ JWT Authentication       | Protects API endpoints and user sessions                                 |
+| 🚫 Duplicate Detection      | Prevents duplicate certificate uploads before blockchain storage         |
 
 ---
 
@@ -471,7 +471,7 @@ All demo credentials are available directly on the Login page.
 
 # 📸 Project Screenshots
 
-The following screenshots demonstrate the major components and workflows of VeriQore.
+The following screenshots showcase the user interface, system architecture, blockchain integration, and key workflows of VeriQore.
 
 ---
 
@@ -559,33 +559,19 @@ The following screenshots demonstrate the major components and workflows of Veri
 
 ---
 
-# ⛓️ Blockchain Interaction
+## ⛓️ Blockchain Integration
 
-The following screenshots demonstrate the blockchain integration used by VeriQore.
-
-> **Note:** These screenshots will be added in a future update.
+The following screenshots demonstrate the blockchain integration used during certificate issuance, including MetaMask transaction approval and on-chain transaction confirmation on the Ethereum Sepolia test network.
 
 ### MetaMask Transaction Approval
 
-```
-screenshots/metamask-transaction.png
-```
+![MetaMask Transaction](screenshots/metamask-transaction.png)
 
 ---
 
-### Ethereum Smart Contract
+### Ethereum Sepolia Blockchain Transaction
 
-```
-screenshots/smart-contract.png
-```
-
----
-
-### Etherscan Transaction
-
-```
-screenshots/etherscan-transaction.png
-```
+![Etherscan Transaction](screenshots/etherscan-transaction.png)
 
 ---
 
