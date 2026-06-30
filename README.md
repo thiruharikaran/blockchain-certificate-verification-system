@@ -460,7 +460,6 @@ VeriQore includes built-in demo accounts that allow recruiters, developers, and 
 
 Available demo roles include:
 
-- 👑 Master Administrator
 - 🏫 College Administrator
 - 🎓 Student
 - 💼 Recruiter
